@@ -1,0 +1,146 @@
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/style.css">
+    
+    <title>Cuota del Cliente</title>
+    <style>
+        /* Animación del botón "Añadir al carrito" */
+        .add-to-cart-btn {
+            transition: transform 0.3s ease;
+        }
+
+        .add-to-cart-btn.clicked {
+            transform: scale(1.1);
+        }
+
+        /* Animación del icono del carrito en el encabezado */
+        #cart-icon {
+            transition: transform 0.3s ease;
+        }
+
+        #cart-icon.clicked {
+            transform: scale(1.1);
+        }
+    </style>
+</head>
+
+<body>
+    <header class="header">
+        <div class="logo">
+            <img src="../imgPro/logo.png" alt="Logo de tu empresa">
+        </div>
+
+        <!-- MENU DE NAVEGACIÓN-->
+        <nav class="navigation">
+            <ul>
+                
+                <li><a href="../index.html">INICIO</a></li>
+                <li><a href="../cliente/cliente.html">GIMNASIOS</a>
+                </li>
+
+                <li><a href="#">INFORMACIÓN</a>
+                    <ul>
+                        <li><a href="../html/Queessport.html">¿Qué es SPORTCONNECT?</a> </li>
+                        <li><a href="../html/quienes.html">¿Quién es el creador de SPORTCONNECT? </a></li>
+                    </ul>
+                </li>
+                <li><a href="../html/haznosunapregunta.html">ATENCIÓN AL CLIENTE</a></li>
+            </ul>
+        </nav>
+
+
+        <!--CARRITO Y USUARIO -->
+        <div class="user-cart-icons">
+            <a href="#"><img src="../imgPro/usuario-de-perfil.png" alt="Icono de usuario"></a>
+            <a href="../html/carrito.html"><img src="../imgPro/carrito-de-compras (1).png "
+                    alt="Icono de carrito"></a>
+        </div>
+    </header>
+
+    <main>
+        <h1>Cuota Premium</h1>
+        <div class="cuota-tarjeta">
+            <h2>29,99€/mes</h2>
+            
+            <ul>
+                <li>- Obtencion de codigo QR personal e intranferible para poder acceder a los gimnasios afiliados (Via Correo Electrónico).</li>
+                <li>- Acceso exclusivo a un gran numero de variedad de  gimnasios afiliados.</li>
+                <li>- Descuentos especiales en productos relacionados con la salud y el bienestar en tiendas asociadas al enseñar tu código QR.</li>
+                <li>- Via Correo Electrónico información de eventos y productos de gimnasios afiliados.</li>
+                <li>- Comunicación directa con otros miembros de la comunidad a través de foros y grupos de interés.</li>
+                <li>- Invitaciones por Correo Electrónico a eventos sociales y networking para conocer a otros entusiastas del fitness.</li>
+                <li>- Actualizaciones regulares sobre nuevas ofertas, clases y servicios disponibles en los gimnasios afiliados.</li>
+                <li>- Soporte prioritario del servicio al cliente para resolver cualquier problema o inquietud de manera rápida y eficiente.</li>
+            </ul>
+            <button class="add-to-cart-btn" onclick="addToCart('premium')">Añadir al carrito</button>
+        </div>
+    </main>
+
+    
+    
+
+    <footer class="pie-pagina">
+        <div class="grupo-1">
+            <div class="box">
+                <figure>
+                    <a href="./index.html">
+                        <img src="../imgPro/logo.png" alt="Logo PitchInvaders">
+                    </a>
+                </figure>
+            </div>
+            <div class="box">
+                <h2>SOBRE NOSOTROS</h2>
+                <p>
+                    Correo Electrónico: SportConnect@gmail.com
+                    Teléfono: 684600751
+                </p>
+                <p>Métodos de Pago:</p>
+                <p>
+                    <img class="visa" src="/public/imgPro/visa.jpg" alt="Imagen visa">
+                    <img class="bizum" src="/public/imgPro/bizum.png" alt="Bizum de SportConnect">
+                    <img class="mastercard" src="/public/imgPro/mastercard.png" alt="Mastercard de SportConnect">
+                    <img class="paypal" src="/public/imgPro/paypal.webp" alt="PayPal de SportConnect">
+                </p>
+                <p>¡Gracias por elegir SportConnect!</p>
+            </div>
+            <div class="box">
+                <h2>SÍGUENOS</h2>
+                <div class="red-social">
+                    <a href="https://www.facebook.com/profile.php?id=61555267331583" class="fa fa-facebook">
+                        <img class="facebook" src="/public/imgPro/facebook.jpg" alt="Facebook de SportConnect">
+                    </a>
+                    <a href="https://www.instagram.com/pitchinvaders_oficial/" class="fa fa-instagram">
+                        <img class="instagram" src="/public/imgPro/insta.jpg" alt="Instagram oficial SportConnect">
+                    </a>
+                    <a href="#" class="fa fa-x">
+                        <img class="twitter" src="/public/imgPro/twitter.jpg" alt="Twitter de SportConnect">
+                    </a>
+                    <a href="https://www.youtube.com/channel/UCEs-l_8FTGPwga0v-KjiN4A" class="fa fa-youtube">
+                        <img class="youtube" src="/public/imgPro/yotube.jpg" alt="YouTube de SportConnect">
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="GRUPO-2">
+            <small>&copy; 2024 <b>SPORTCONNECT</b> - Todos los Derechos Reservados.</small>
+        </div>
+    </footer>
+    <script>
+        function addToCart(cuotaId) {
+            const cuota = {
+                id: cuotaId,
+                nombre: 'Cuota Premium',
+                precio: '29,99€'
+            };
+            localStorage.setItem('cuotaSeleccionada', JSON.stringify(cuota));
+            // Redirigir al usuario a la página del carrito
+            window.location.href = "/html/carrito.html";
+        }
+    </script>
+</body>
+</html>

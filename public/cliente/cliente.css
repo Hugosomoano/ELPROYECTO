@@ -1,0 +1,53 @@
+
+main {
+    margin-top: 20%;
+    text-align: center;
+    background-color: #ffffff;
+}
+
+main button {
+    margin-bottom: 20px;
+    padding: 10px 20px;
+    background-color: #17d02c;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+label, select {
+    display: block;
+    margin: 10px auto;
+    text-align: center;
+    background-color: #ffffff;
+}
+
+select {
+    width: 200px;
+    padding: 5px;
+    margin-bottom: 20px;
+}
+
+#gimnasios-list {
+    background-color:#ffffff;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.gimnasio {
+    
+   
+    border-radius: 10px;
+    padding: 15px;
+    max-width: 300px;
+    text-align: center;
+}
+
+.gimnasio img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+

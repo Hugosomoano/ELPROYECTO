@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/public/css/style.css">
+    <title>Carrito de Compras</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f5;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+
+        th, td {
+            padding: 10px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+
+        .payment-form {
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            padding: 20px;
+            background-color: #f9f9f9;
+        }
+
+        .payment-form label {
+            display: block;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+
+        .payment-form input[type="text"], 
+        .payment-form input[type="number"] {
+            width: calc(100% - 22px);
+            padding: 8px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+        }
+
+        .payment-form input[type="submit"] {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+        }
+
+        .total {
+            font-weight: bold;
+            font-size: 1.2em;
+            text-align: right;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Carrito de Compras</h1>
+        <table id="cart-items">
+            <thead>
+                <tr>
+                    <th>Producto</th>
+                    <th>Precio</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Las cuotas añadidas se mostrarán aquí dinámicamente -->
+            </tbody>
+        </table>
+
+        <div class="total">
+            Total: <span id="total-amount"></span>
+        </div>
+
+        <label for="first-name">Nombre:</label>
+        <input type="text" id="first-name" name="first-name" required>
+        <label for="last-name">Apellidos:</label>
+        <input type="text" id="last-name" name="last-name" required>
+        <label for="email">Correo Electrónico:</label>
+        <input type="email" id="email" name="email" required>
+
+        <div class="payment-form">
+            <h2>Información de Pago</h2>
+            <form id="paymentForm">
+                <label for="card-number">Número de Tarjeta:</label>
+                <input type="text" id="card-number" name="card-number" required>
+                <label for="expiration">Fecha de Expiración:</label>
+                <input type="text" id="expiration" name="expiration" placeholder="MM/AA" required>
+                <label for="cvv">CVV:</label>
+                <input type="number" id="cvv" name="cvv" min="100" max="999" required>
+                <input type="submit" value="Pagar">
+            </form>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const form = document.getElementById('paymentForm');
+            form.addEventListener('submit', function(event) {
+                event.preventDefault(); // Evitar que el formulario se envíe automáticamente
+
+                // Obtener los datos del formulario
+                const firstName = document.getElementById('first-name').value;
+                const lastName = document.getElementById('last-name').value;
+                const email = document.getElementById('email').value;
+
+                // Enviar datos al servidor para generar el código QR y enviar el correo electrónico
+                fetch('/send-email', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({
+                        to: email,
+                        subject: '¡Gracias por tu pago!',
+                        text: `Hola ${firstName} ${lastName},\nGracias por tu pago. Aquí tienes tu código QR:`
+                    })
+                })
+                .then(response => response.text())
+                .then(data => {
+                    alert(data);
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                    alert('Error al enviar el correo');
+                });
+            });
+
+            function cargarCuotasDelCarrito() {
+                const cartItemsContainer = document.getElementById('cart-items').getElementsByTagName('tbody')[0];
+                cartItemsContainer.innerHTML = '';
+                let totalAmount = 0;
+
+                const cuotaSeleccionada = JSON.parse(localStorage.getItem('cuotaSeleccionada'));
+
+                if (cuotaSeleccionada) {
+                    const cuotaItem = document.createElement('tr');
+                    const cuotaNameCell = document.createElement('td');
+                    const cuotaPriceCell = document.createElement('td');
+                    cuotaNameCell.textContent = cuotaSeleccionada.nombre;
+                    cuotaPriceCell.textContent = cuotaSeleccionada.precio;
+                    cuotaItem.appendChild(cuotaNameCell);
+                    cuotaItem.appendChild(cuotaPriceCell);
+                    cartItemsContainer.appendChild(cuotaItem);
+
+                    totalAmount += parseFloat(cuotaSeleccionada.precio.replace('€', '').replace(',', '.'));
+                    document.getElementById('total-amount').textContent = totalAmount.toFixed(2) + '€';
+                }
+            }
+
+            cargarCuotasDelCarrito();
+        });
+    </script>
+</body>
+</html>

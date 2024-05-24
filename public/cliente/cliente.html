@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../cliente/cliente.css">
+    <script defer src="../js/filter.js"></script>
+    <link rel="stylesheet" href="../css/style.css">
+    <title>Cliente</title>
+</head>
+
+<body>
+    <header class="header">
+        <div class="logo">
+            <img src="../imgPro/logo.png" alt="Logo de tu empresa">
+        </div>
+
+        <!-- MENU DE NAVEGACIÓN-->
+        <nav class="navigation">
+            <ul>
+                
+                <li><a href="../index.html">INICIO</a></li>
+                <li><a href="../cliente/cliente.html">GIMNASIOS</a>
+                </li>
+
+                <li><a href="#">INFORMACIÓN</a>
+                    <ul>
+                        <li><a href="../html/Queessport.html">¿Qué es SPORTCONNECT?</a> </li>
+                        <li><a href="../html/quienes.html">¿Quién es el creador de SPORTCONNECT? </a></li>
+                    </ul>
+                </li>
+                <li><a href="../html/haznosunapregunta.html">ATENCIÓN AL CLIENTE</a></li>
+            </ul>
+        </nav>
+
+
+        <!--CARRITO Y USUARIO -->
+        <div class="user-cart-icons">
+            <a href="#"><img src="../imgPro/usuario-de-perfil.png" alt="Icono de usuario"></a>
+            <a href="../html/carrito.html"><img src="../imgPro/carrito-de-compras (1).png "
+                    alt="Icono de carrito"></a>
+        </div>
+    </header>
+
+    <main>
+        <button onclick="location.href='../cliente/clientecuota.html'" style="margin: 20px;">¡PAGAR CUOTA!</button>
+        <label for="comunidad">Escoge tu Comunidad Autónoma:</label>
+        <select id="comunidad">
+            <option value="todas">Todas</option>
+            <option value="Andalucía">  Andalucía</option>
+            <option value="Aragón"> Aragón</option>
+            <option value="Asturias"> Asturias</option>
+            <option value="Baleares"> Baleares</option>
+            <option value="Cantabria"> Cantabria</option>
+            <option value="Castilla-La Mancha"> Castilla-La Mancha</option>
+            <option value="Castilla y León"> Castilla y León</option>
+            <option value="Cataluña"> Cataluña</option>
+            <option value="Extremadura"> Extremadura</option>
+            <option value="Galicia"> Galicia</option>
+            <option value="Madrid"> Madrid</option>
+            <option value="País Vasco"> País Vasco</option>
+            <option value="Valencia"> Valencia</option>
+        </select>
+
+        <div id="gimnasios-list">
+            <!-- Andalucía -->
+            <div class="gimnasio" data-comunidad="Andalucía">
+                <img src="../imgPro/Studio1AND.jpg" alt="Gimnasio Studio 1">
+                <p>Studio 1 Fitness Center - Andalucía</p>
+                <p>Ubicación: Calle Alhóndiga, 24, Sevilla</p>
+            </div>
+            <div class="gimnasio" data-comunidad="Andalucía">
+                <img src="../imgPro/masmusculosAND.jpeg" alt="Gimnasio Masmusculo">
+                <p>MasMusculo Gym - Andalucía</p>
+                <p>Ubicación: Calle Recogidas, 19, Granada</p>
+            </div>
+            <div class="gimnasio" data-comunidad="Andalucía">
+                <img src="../imgPro/ElementsGymMarbellaAND.jpg" alt="Gimnasio ElementsGym">
+                <p>Elements Gym Marbella - Andalucía</p>
+                <p>Ubicación: Avenida Ricardo Soriano, 20, Marbella</p>
+            </div>
+        
+            <!-- Aragón -->
+            <div class="gimnasio" data-comunidad="Aragón">
+                <img src="../imgPro/vivagymARA.jpeg" alt="Gimnasio VivaGym">
+                <p>VivaGym Zaragoza - Aragón</p>
+                <p>Ubicación: Calle del Coso, 60, Zaragoza</p>
+            </div>
+            <div class="gimnasio" data-comunidad="Aragón">
+                <img src="../imgPro/anytimefitnnessARA.jpeg" alt="Gimnasio Anytime Fitness">
+                <p>Anytime Fitness Huesca - Aragón</p>
+                <p>Ubicación: Avenida de los Pirineos, 14, Huesca</p>
+            </div>
+        
+            <!-- Asturias -->
+            <div class="gimnasio" data-comunidad="Asturias">
+                <img src="../imgPro/gofitAST.jpg" alt="Gimnasio GoFit">
+                <p>GoFit Oviedo - Asturias</p>
+                <p>Ubicación: Calle Fuertes Acevedo, 56, Oviedo</p>
+            </div>
+            <div class="gimnasio" data-comunidad="Asturias">
+                <img src="../imgPro/synergymAST.jpeg" alt="Gimnasio Synergym">
+                <p>Synergym Gijón - Asturias</p>
+                <p>Ubicación: Calle Marqués de San Esteban, 12, Gijón</p>
+            </div>
+            <div class="gimnasio" data-comunidad="Asturias">
+                <img src="../imgPro/gimnasioeqaAST.jpeg" alt="Gimnasio EQA">
+                <p>Gimnasio EQA - Asturias</p>
+                <p>Ubicación: Calle de la Magdalena, 24, Avilés</p>
+            </div>
+        
+            <!-- Baleares -->
+            <div class="gimnasio" data-comunidad="Baleares">
+                <img src="../imgPro/vidingMALL.jpeg" alt="Gimnasio Viding">
+                <p>Viding Mallorca - Baleares</p>
+                <p>Ubicación: Calle Aragón, 204, Palma</p>
+            </div>
+            <div class="gimnasio" data-comunidad="Baleares">
+                <img src="../imgPro/fitclubMALL.jpeg" alt="Gimnasio FitClub">
+                <p>FitClub Ibiza - Baleares</p>
+                <p>Ubicación: Avenida de España, 34, Ibiza</p>
+            </div>
+            <div class="gimnasio" data-comunidad="Baleares">
+                <img src="../imgPro/gymatlatntastudioMALL.jpeg" alt="Gimnasio Atlantis Studio">
+                <p>Atlantis Studio - Baleares</p>
+                <p>Ubicación: Calle de San Jaime, 21, Menorca</p>
+            </div>
+        
+           
+        
+            <!-- Cantabria -->
+            <div class="gimnasio" data-comunidad="Cantabria">
+                <img src="../imgPro/mcfitCAN.jpeg" alt="Gimnasio McFit">
+                <p>McFit Santander - Cantabria</p>
+                <p>Ubicación: Calle Burgos, 2, Santander</p>
+            </div>
+            <div class="gimnasio" data-comunidad="Cantabria">
+                <img src="../imgPro/imagymCAN.jpeg" alt="Gimnasio Imagym">
+                <p>Imagym Torrelavega - Cantabria</p>
+                <p>Ubicación: Calle Consolación, 18, Torrelavega</p>
+            </div>
+        
+            <!-- Castilla-La Mancha -->
+            <div class="gimnasio" data-comunidad="Castilla-La Mancha">
+                <img src="../imgPro/fitupMAN.jpeg" alt="Gimnasio FitUp">
+                <p>FitUp Toledo - Castilla-La Mancha</p>
+                <p>Ubicación: Calle Real, 45, Toledo</p>
+            </div>
+            <div class="gimnasio" data-comunidad="Castilla-La Mancha">
+                <img src="../imgPro/masmusculosAND.jpeg" alt="Gimnasio Masmusculo">
+                <p>MasMusculo Albacete - Castilla-La Mancha</p>
+                <p>Ubicación: Avenida de España, 19, Albacete</p>
+            </div>
+            <div class="gimnasio" data-comunidad="Castilla-La Mancha">
+                <img src="../imgPro/mcfitCAN.jpeg" alt="Gimnasio McFit">
+                <p>McFit Ciudad Real - Castilla-La Mancha</p>
+                <p>Ubicación: Calle Alarcos, 15, Ciudad Real</p>
+            </div>
+        
+            <!-- Castilla y León -->
+            <div class="gimnasio" data-comunidad="Castilla y León">
+                <img src="../imgPro/dirLEO.jpeg" alt="Gimnasio DIR">
+                <p>DIR León - Castilla y León</p>
+                <p>Ubicación: Avenida de los Reyes Leoneses, 10, León</p>
+            </div>
+            <div class="gimnasio" data-comunidad="Castilla y León">
+                <img src="../imgPro/etenonLEO.jpeg" alt="Gimnasio Etenon">
+                <p>Etenon Salamanca - Castilla y León</p>
+                <p>Ubicación: Calle Toro, 34, Salamanca</p>
+            </div>
+            <div class="gimnasio" data-comunidad="Castilla y León">
+                <img src="../imgPro/sportiaLEO.jpeg" alt="Gimnasio Sportia">
+                <p>Sportia Burgos - Castilla y León</p>
+                <p>Ubicación: Calle Vitoria, 4, Burgos</p>
+            </div>
+        
+            <!-- Cataluña -->
+            <div class="gimnasio" data-comunidad="Cataluña">
+                <img src="../imgPro/vivagymCAT.jpeg" alt="Gimnasio VivaGym">
+                <p>VivaGym Barcelona - Cataluña</p>
+                <p>Ubicación: Calle de Aragón, 204, Barcelona</p>
+            </div>
+            <div class="gimnasio" data-comunidad="Cataluña">
+                <img src="../imgPro/llinasparkCAT.jpeg" alt="Gimnasio LlinarsPark">
+                <p>LlinarsPark Gym - Cataluña</p>
+                <p>Ubicación: Calle Mayor, 12, Llinars del Vallès</p>
+            </div>
+        
+            <!-- Extremadura -->
+            <div class="gimnasio" data-comunidad="Extremadura">
+                <img src="../imgPro/altafitEXT.jpeg" alt="Gimnasio Altafit">
+                <p>Altafit Badajoz - Extremadura</p>
+                <p>Ubicación: Avenida de Europa, 25, Badajoz</p>
+            </div>
+            <div class="gimnasio" data-comunidad="Extremadura">
+                <img src="../imgPro/basicfitEXT.jpeg" alt="Gimnasio BasicFit">
+                <p>BasicFit Cáceres - Extremadura</p>
+                <p>Ubicación: Calle Pintores, 10, Cáceres</p>
+            </div>
+        
+            <!-- Galicia -->
+            <div class="gimnasio" data-comunidad="Galicia">
+                <img src="../imgPro/infinitGAL.jpeg" alt="Gimnasio Infinit">
+                <p>Infinit Gym Vigo - Galicia</p>
+                <p>Ubicación: Avenida de Gran Vía, 18, Vigo</p>
+            </div>
+            <div class="gimnasio" data-comunidad="Galicia">
+                <img src="../imgPro/crossfitdrkGAL.jpg" alt="Gimnasio CrossFit DRK">
+                <p>CrossFit DRK A Coruña - Galicia</p>
+                <p>Ubicación: Calle Real, 42, A Coruña</p>
+            </div>
+            <div class="gimnasio" data-comunidad="Galicia">
+                <img src="../imgPro/metrpolitanGAL.jpeg" alt="Gimnasio Metropolitan">
+                <p>Metropolitan Santiago - Galicia</p>
+                <p>Ubicación: Calle del Hórreo, 28, Santiago de Compostela</p>
+            </div>
+        
+            <!-- Madrid -->
+            <div class="gimnasio" data-comunidad="Madrid">
+                <img src="../imgPro/ritualgymMAD.jpg" alt="Gimnasio Madrid 1">
+                <p>BodyFactory Madrid - Madrid</p>
+                <p>Ubicación: Calle de Alcalá, 75, Madrid</p>
+            </div>
+            <div class="gimnasio" data-comunidad="Madrid">
+                <img src="../imgPro/CouragegymMAD.jpg" alt="Gimnasio Madrid 2">
+                <p>Gymage Lounge Resort - Madrid</p>
+                <p>Ubicación: Calle de la Luna, 2, Madrid</p>
+            </div>
+            <div class="gimnasio" data-comunidad="Madrid">
+                <img src="../imgPro/boutiquegymMAD.jpg" alt="Gimnasio Madrid 3">
+                <p>Metropolitan Abascal - Madrid</p>
+                <p>Ubicación: Calle de José Abascal, 46, Madrid</p>
+            </div>
+        
+            <!-- País Vasco -->
+            <div class="gimnasio" data-comunidad="País Vasco">
+                <img src="../imgPro/synergymPAI.jpg" alt="Gimnasio País Vasco 1">
+                <p>Gym Bilbao - País Vasco</p>
+                <p>Ubicación: Gran Vía de Don Diego López de Haro, 19, Bilbao</p>
+            </div>
+            <div class="gimnasio" data-comunidad="País Vasco">
+                <img src="../imgPro/urbanboulderPAI.jpg" alt="Gimnasio País Vasco 2">
+                <p>Gimnasio Donosti - País Vasco</p>
+                <p>Ubicación: Avenida de la Libertad, 33, San Sebastián</p>
+            </div>
+            <div class="gimnasio" data-comunidad="País Vasco">
+                <img src="../imgPro/spartasportcenterPAI.jpg" alt="Gimnasio País Vasco 3">
+                <p>Fit&Go Vitoria - País Vasco</p>
+                <p>Ubicación: Calle Dato, 22, Vitoria</p>
+            </div>
+        
+            <!-- Valencia -->
+            <div class="gimnasio" data-comunidad="Valencia">
+                <img src="../imgPro/icongymVAL.jpg" alt="Gimnasio Valencia 1">
+                <p>Valencia Fitness Club - Valencia</p>
+                <p>Ubicación: Calle de Colón, 18, Valencia</p>
+            </div>
+            <div class="gimnasio" data-comunidad="Valencia">
+                <img src="../imgPro/vidingMALL.jpeg" alt="Gimnasio Valencia 2">
+                <p>Gym24 Valencia - Valencia</p>
+                <p>Ubicación: Avenida del Puerto, 34, Valencia</p>
+            </div>
+            <div class="gimnasio" data-comunidad="Valencia">
+                <img src="../imgPro/fitnessfabragymVAL.jpg" alt="Gimnasio Valencia 3">
+                <p>Club Metropolitan - Valencia</p>
+                <p>Ubicación: Calle San Vicente Mártir, 89, Valencia</p>
+            </div>
+        </div>
+
+    <footer class="pie-pagina">
+        <div class="grupo-1">
+            <div class="box">
+                <figure>
+                    <a href=".index.html">
+                        <img src="../imgPro/logo.png" alt="Logo PitchInvaders">
+                    </a>
+                </figure>
+            </div>
+            <div class="box">
+                <h2>SOBRE NOSOTROS</h2>
+                <p>
+                    Correo Electrónico: SportConnect@gmail.com
+                    Teléfono: 684600751
+                </p>
+                <p>Métodos de Pago:</p>
+                <p>
+                    <img class="visa" src="../imgPro/visa.jpg" alt="Imagen visa">
+                    <img class="bizum" src="../imgPro/bizum.png" alt="Bizum de SportConnect">
+                    <img class="mastercard" src="../imgPro/mastercard.png" alt="Mastercard de SportConnect">
+                    <img class="paypal" src="../imgPro/paypal.webp" alt="PayPal de SportConnect">
+                </p>
+                <p>¡Gracias por elegir SportConnect!</p>
+            </div>
+            <div class="box">
+                <h2>SÍGUENOS</h2>
+                <div class="red-social">
+                    <a href="https://www.facebook.com/profile.php?id=61555267331583" class="fa fa-facebook">
+                        <img class="facebook" src="../imgPro/facebook.jpg" alt="Facebook de SportConnect">
+                    </a>
+                    <a href="https://www.instagram.com/pitchinvaders_oficial/" class="fa fa-instagram">
+                        <img class="instagram" src="../imgPro/insta.jpg" alt="Instagram oficial SportConnect">
+                    </a>
+                    <a href="#" class="fa fa-x">
+                        <img class="twitter" src="../imgPro/twitter.jpg" alt="Twitter de SportConnect">
+                    </a>
+                    <a href="https://www.youtube.com/channel/UCEs-l_8FTGPwga0v-KjiN4A" class="fa fa-youtube">
+                        <img class="youtube" src="../imgPro/yotube.jpg" alt="YouTube de SportConnect">
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="GRUPO-2">
+            <small>&copy; 2024 <b>SPORTCONNECT</b> - Todos los Derechos Reservados.</small>
+        </div>
+    </footer>
+    <script src="../js/filter.js"></script>
+</body>
+
+</html>

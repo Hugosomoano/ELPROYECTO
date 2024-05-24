@@ -1,0 +1,47 @@
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+}
+.container {
+    max-width: 600px;
+    padding-top: 20%;
+    padding-bottom: 30%;
+    text-align: center;
+  }
+  
+  h1 {
+    text-align: center;
+    margin-bottom: 30px;
+  }
+  
+  .button-container {
+    display: flex;
+    justify-content: center;
+  }
+  
+  .selection-button {
+    padding: 10px 20px;
+    margin: 0 10px;
+    font-size: 18px;
+    background-color: #17d02c; /* Cambia el color de fondo según tu preferencia */
+    color: #fff; /* Cambia el color del texto según tu preferencia */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-decoration: none !important; /* Elimina el subrayado del enlace */
+    display: inline-block;
+  }
+  
+  .selection-button:hover {
+    background-color: #0dff00; /* Cambia el color de fondo del botón al pasar el ratón */
+  color: #fff; 
+  }
+  /*
+.container{
+    padding-top: 20%;
+    padding-bottom: 30%;
+}
+h1{
+    text-align: center;
+    margin-bottom: 30px;
+}
